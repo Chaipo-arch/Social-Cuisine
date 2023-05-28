@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
+
+@font-face {
+  font-family: 'Grand Hotel';
+  src: url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+  font-family: 'Eczar';
+  src: url('https://fonts.googleapis.com/css2?family=Eczar&display=swap'); 
+}
+
+
+html {
+  /*Met la couleur #CBF6BD en fond de toute la page*/ 
+  background-color: #CBF6BD;
+}
+
+.Recherche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
