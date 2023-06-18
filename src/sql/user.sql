@@ -7,6 +7,10 @@ CREATE TABLE user(
 	mdp text,
 	userID integer auto_increment primary key,
 	mail text
+    birth_date date,
+    City VARCHAR(64),
+    code_postal INT,
+    Adresse varchar(64)
 );
 
 
