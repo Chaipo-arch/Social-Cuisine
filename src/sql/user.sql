@@ -54,3 +54,34 @@ END //
 DELIMITER ;
 
 CALL userLogin("adminTest","adminTest");
+
+DROP procedure if exists get_Information;
+DELIMITER //
+CREATE procedure get_UserInformation(IN ID INT)
+BEGIN
+	select * FROM user WHERE userID = ID;
+END //
+DELIMITER ;
+	
+    Drop procedure if exists GetUserJSON;
+
+DELIMITER //
+
+CREATE PROCEDURE GetUserJSON(IN p_userID INT)
+BEGIN
+    SELECT JSON_OBJECT(
+        'id', userId,
+        'username', username,
+        'email', mail,
+		'birth date', birth_date,
+        'city', city,
+        'code_postal', code_postal,
+        'adresse', adresse
+    ) AS user_json
+    FROM user
+    WHERE userId = p_userID;
+END //
+
+DELIMITER ;
+
+CALL GetUserJSON(1);
