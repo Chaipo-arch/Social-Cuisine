@@ -5,8 +5,8 @@ DROP TABLE if exists user;
 CREATE TABLE user(
 	username varchar(30),
 	mdp text,
-	userID integer auto_increment primary key
-	
+	userID integer auto_increment primary key,
+	mail text
 );
 
 
