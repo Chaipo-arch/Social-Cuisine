@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+
+
+@font-face {
+  font-family: 'Grand Hotel';
+  src: url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+  font-family: 'Eczar';
+  src: url('https://fonts.googleapis.com/css2?family=Eczar&display=swap'); 
+}
+
+
+html {
+  /*Met la couleur #CBF6BD en fond de toute la page*/ 
+  background-color: #CBF6BD;
+}
+
+.Recherche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* CSS */
+.TableauTopRecette {
+  margin-top: 40px;
+  margin-left: 2.5%;
+  border-radius: 5px;
+  background: #9BC472;
+  box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.30);
+  width: 20%;
+  height: 260px;
+  padding: 5px;
+}
+
+.ClassemenTopRecettes {
+  margin-right: 2.5%;
+  display: flex;
+  justify-content: space-between;
+}
+.photo{
+  margin-top: 5%;
+  height: 60%;
+  width: 80%;
+  margin-left: 10%;
+}
+.titreRecette{
+  padding-top: 5%;
+  margin-left: 10%;
+  color: #000;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+  font-family: Eczar;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal; 
+}
+/* Ajout des styles lors du survol */
+.TableauTopRecette:hover {
+  transform: scale(1.02); /* Augmente la taille de l'élément de 10% lors du survol */
+}

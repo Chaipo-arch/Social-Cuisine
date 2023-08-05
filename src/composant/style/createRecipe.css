@@ -1,0 +1,35 @@
+.total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.createRecipe{
+    background-color: #9BC472;
+    width: 80%;
+    height: 90%;
+    border-radius: 3%;
+}
+
+.recipeName{
+    color: #0F513F;
+    display: flex;
+    margin-top: 2%;
+    margin-left: 5%;
+    font-family: Eczar;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+.cadre{
+    border-radius: 10px;
+    background: #0F513F; 
+    height: 50px; 
+    color: white;
+    margin-left: 5%;
+    text-align: center;
+    width: 11%;
+}
