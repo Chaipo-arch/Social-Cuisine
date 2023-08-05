@@ -8,12 +8,24 @@
 
 .createRecipe{
     background-color: #9BC472;
-    width: 80%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     border-radius: 3%;
+    
 }
 
 .recipeName{
+    color: #0F513F;
+    display: flex;
+    margin-top: 2%;
+    font-family: Eczar;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    width: 100%;
+}
+.recipesAttribut{
     color: #0F513F;
     display: flex;
     margin-top: 2%;
@@ -24,12 +36,47 @@
     font-weight: 400;
     line-height: normal; 
 }
+
 .cadre{
     border-radius: 10px;
     background: #0F513F; 
     height: 50px; 
     color: white;
-    margin-left: 5%;
+    
     text-align: center;
-    width: 11%;
+    width: 100%;
+}
+.grid-container {
+    display: grid;
+    width: 60%;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes avec fractionnement automatique */
+    margin-left: 5%;
+    grid-gap: 10px; /* Espacement entre les éléments */
+    float: left; /* Utiliser float: left pour la grille */
+  }
+.upload{
+    background-color: #D9D9D9;
+    width: 30%;
+    justify-self: center;
+    justify-content: center;
+    position: relative;
+    height: 60%;
+    border-radius: 10%;
+    display: flex;
+    text-align: center;
+    float: right; /* Utiliser float: left pour la grille */
+    margin-right: 2.5%;
+}
+.voisin{
+    width: 100%;
+    /* display: flex; */
+    height: 50%;
+}
+.next{
+    margin-left: 90%;
+    background-color: #F9C202;
+    font-family: Eczar;
+    border-radius: 10px;
+    height: 4%;
+    width: 5%;
 }
