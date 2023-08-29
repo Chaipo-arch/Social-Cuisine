@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import LeftBar from '../composant/LeftBar';
 import LoggedContext from '../context/LoggedContext'; // Importe le contexte LoggedContext
+import './style/topBar.css'
 class TopBar extends Component {
 
   static contextType = LoggedContext;
@@ -63,12 +64,39 @@ class TopBar extends Component {
         console.log( data[0].userId);
         if ( data[0].userId > 0) {
           this.context.setLogged(true); // Met à jour l'état logged dans le contexte
+          this.context.setUserID(data[0].userId);
         } 
       })
       .catch(error => {
         console.log(this.state.formData.username);
       });
   };
+  handleCreateUser =() => {
+    const { username, password } = this.state.formData;
+    
+    if (username.trim() === '' || password.trim() === '') {
+      alert("Veuillez remplir tous les champs du formulaire.");
+      return;
+    }
+    console.log(this.state.formData);
+    this.setState({ formData: { username: '', password: '' } });
+    this.setState({ connectionPopUp: false });
+    axios.post(`https://localhost:44330/Connexion/signUp/${this.state.formData.username}/${this.state.formData.password}`)
+      .then(response => {
+        const data = response.data;
+
+
+        // Accède à la valeur de userId et affiche-la dans la console
+        console.log( data[0].success);
+        if ( data[0].success > 0) {
+          this.context.setLogged(true); // Met à jour l'état logged dans le contexte
+        } 
+      })
+      .catch(error => {
+        console.log(this.state.formData.username);
+      });
+  };
+
   handleUserButton = (event) => {
     this.setState({ anchorElUser: event.currentTarget });
   };
@@ -119,7 +147,8 @@ class TopBar extends Component {
               </Menu>
           </div>
           )}
-          <Dialog sx={{height : "100%"}} open={connectionPopUp} onClose={this.closeConnectionPopUp}>
+          
+          <Dialog className="dialog" sx={{height : "100%", }} open={connectionPopUp} onClose={this.closeConnectionPopUp}>
             <DialogContent sx={{ backgroundColor: bgColor }}>
               <form>
                 <label>
@@ -135,9 +164,9 @@ class TopBar extends Component {
             </DialogContent>
             <DialogActions>
               <Button onClick={this.handleConnection} color="inherit" sx={{ fontFamily: 'Grand Hotel', fontSize: '40px', textTransform: "none", textShadow: "4px 4px 8px rgba(0, 0, 0, 0.5)", boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.3)' }}> Se Connecter </Button>
-              <Link to="/userCreate" style={{ textDecoration: 'none' }}>
-                <Button onClick={this.closeConnectionPopUp} color="inherit" sx={{ fontFamily: 'Grand Hotel', fontSize: '40px', textTransform: "none", textShadow: "4px 4px 8px rgba(0, 0, 0, 0.5)", boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.3)', color : 'inherit' }}> créer un compte </Button>
-              </Link>
+              
+                <Button onClick={this.handleCreateUser} color="inherit" sx={{ fontFamily: 'Grand Hotel', fontSize: '40px', textTransform: "none", textShadow: "4px 4px 8px rgba(0, 0, 0, 0.5)", boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.3)', color : 'inherit' }}> créer un compte </Button>
+
             </DialogActions>
           </Dialog>
         </Toolbar>

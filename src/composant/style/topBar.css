@@ -14,3 +14,9 @@ html {
   /*Met la couleur #CBF6BD en fond de toute la page*/ 
   background-color: #CBF6BD;
 }
+.dialog{
+  border: '5px solid green',
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  border : 5px solid #10654E
+}

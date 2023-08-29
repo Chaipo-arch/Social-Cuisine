@@ -6,7 +6,7 @@ import  Home  from "./pages/HomePage";
 import user from "./pages/user";
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Recipe from "./pages/Recipe"
-import createRecipe from "./pages/createRecipe"
+import CreateRecipe from "./pages/createRecipe"
 import userCreate from "./pages/userCreate"
 import Test from "./pages/Test";
 import TopBar from './composant/topBar'; // Import the TopBar component
@@ -20,7 +20,7 @@ function App() {
       <TopBar /> {/* Include the TopBar component */}
       <Routes>
         <Route path="/test" element={<Test/>}></Route>
-        <Route path="/createRecipe" element={<createRecipe/>}></Route>
+        <Route path="/createRecipe" element={<CreateRecipe/>}></Route>
         <Route path="/userCreate" element={<userCreate/>}></Route>
         <Route path="/Recipe" element={<Recipe/>}></Route>
         <Route path="*" element={<Home/>}></Route>

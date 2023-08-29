@@ -8,9 +8,10 @@ export function useLogged() {
 
 export function LoggedProvider({ children }) {
   const [logged, setLogged] = useState(false);
+  const [userID, setUserID] = useState(null); // Ajout de l'ID de l'utilisateur
 
   return (
-    <LoggedContext.Provider value={{ logged, setLogged }}>
+    <LoggedContext.Provider value={{ logged, setLogged , userID, setUserID }}>
       {children}
     </LoggedContext.Provider>
   );

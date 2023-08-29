@@ -3,19 +3,21 @@ import React, { useEffect } from 'react';
 import Home from '../composant/homeComponent';
 import LeftBar from '../composant/LeftBar';
 import { useLogged } from '../context/LoggedContext';
-import { AppBar, Toolbar, Typography, Button, TextField, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
-import '../composant/style/Home.css';
+import CreateRecipeComponent from '../composant/createRecipeComponent'
 
-const createRecipe = () => {
-    const { logged } = useLogged();
+const CreateRecipe = () => {
+    //const { logged } = useLogged();
+    const logged = true;
 
     return (
-        <div className="App">
-        <div className='Recherche'>
-            <TextField id='schearch' label='Rechercher une recette' variant='outlined' sx={{ width: '50%', backgroundColor: "white", borderRadius: '10px', boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.3)' }} />
-        </div>
+        
+        <div style={{ display: 'flex'  }}> 
+                  {logged && <LeftBar />}
+            <div style={{ flex: '1'}}>
+                <CreateRecipeComponent />
+            </div>   
         </div>
     );
 };
 
-export default createRecipe;
+export default CreateRecipe;

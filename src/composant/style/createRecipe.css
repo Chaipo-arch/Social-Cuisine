@@ -42,9 +42,25 @@
     background: #0F513F; 
     height: 50px; 
     color: white;
-    
-    text-align: center;
+    display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: space-between; /* Espace équitable entre les éléments enfants */
+}
+.buttonPlus{
+    flex: 0 0 auto; /* Ne pas agrandir, ne pas réduire */
+    padding-left: 4%;
+    align-self: center;
+    border-radius: 5px;
+}
+.buttonMoins{
+    flex: 0 0 auto; /* Ne pas agrandir, ne pas réduire */
+    padding-right: 4%;
+    align-self: center; 
+}
+.donneIngredient{
+    align-items: center;
+    display: flex;
 }
 .grid-container {
     display: grid;
